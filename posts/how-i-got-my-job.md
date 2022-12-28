@@ -1,5 +1,5 @@
 ---
-title: 'Next.js page options and how they work'
+title: 'How I got my job'
 metaTitle: 'Next.js page options and how they work'
 metaDesc: 'How to use pages in Next.js exploring the options'
 socialImage: images/22-09-2021.jpg
