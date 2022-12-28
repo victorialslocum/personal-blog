@@ -24,9 +24,15 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  let blog_posts = []
+  for (let i = 0; i < posts.length; i++) {
+    if (posts[i].frontmatter.tags.includes('TIL') == false) {
+      blog_posts.push(posts[i])
+    }
+  }
   return (
     <div className=''>
-      {posts.map(({ slug, frontmatter }) => (
+      {blog_posts.map(({ slug, frontmatter }) => (
         <div
           key={slug}
           className='overflow-hidden flex flex-col'
