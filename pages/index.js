@@ -1,14 +1,12 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import Image from 'next/image';
-import Link from 'next/link';
+import fs from "fs";
+import matter from "gray-matter";
 
 export async function getStaticProps() {
-  const files = fs.readdirSync('posts');
+  const files = fs.readdirSync("posts");
 
   const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8');
+    const slug = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
     const { data: frontmatter } = matter(readFile);
     return {
       slug,
@@ -24,41 +22,38 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  let blog_posts = []
+  let blog_posts = [];
   for (let i = 0; i < posts.length; i++) {
-    if (posts[i].frontmatter.tags.includes('TIL') == false) {
-      blog_posts.push(posts[i])
+    if (posts[i].frontmatter.tags.includes("TIL") == false) {
+      blog_posts.push(posts[i]);
     }
   }
   return (
-    <div className=''>
+    <div className="">
       {blog_posts.map(({ slug, frontmatter }) => (
-        <div
-          key={slug}
-          className='overflow-hidden flex flex-col'
-        >
-          <Link href={`/post/${slug}`}>
-          <a>
-            <div className='flex'>
-              <div className='p-2 flex-none w-325 h-170'><Image
-                width={325}
-                height={170}
-                alt={frontmatter.title}
-                src={`/${frontmatter.socialImage}`}
-              /></div>
+        <div key={slug} class="">
+          <div class="box is-rounded p-5">
+           
+            <div class="columns">
+              <div class="column">
+            <p class="title is-3 is-underlined" href={`/post/${slug}`}>{frontmatter.title}</p>
+            </div>
+            <div className="column">
+              {frontmatter.tags.map((tag) => (
+                <div className="button is-small is-static mr-1 is-pulled-right">
+                  {tag}
+                </div>
+              ))}
               
-              
-              <div className='text-left flex-auto p-2 pl-9'>
-              <h1 className='text-2xl font-bold pb-3 pt-3'>{frontmatter.title}</h1>
-              <p className='text-lg'>{frontmatter.summary}</p>
-              <div className='flex pt-5'>{frontmatter.tags.map((tag)=>(<div className='flex-none px-2 mr-2 bg-slate-200 rounded-md'>{tag}</div>))}</div>
-              </div>
-              
-            
-              </div>
+            </div>
+            </div>
+            <p class="title is-6">{frontmatter.date}</p>
+            <p class="is-size-6 pb-4">{frontmatter.summary}</p>
+            <a class="button is-primary is-small" href={`/post/${slug}`}>
+              <span>Read the post</span>
             </a>
-            
-          </Link>
+
+          </div>
         </div>
       ))}
     </div>

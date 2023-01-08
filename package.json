@@ -1,31 +1,24 @@
 {
-  "name": "next-blog",
-  "version": "0.1.0",
-  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "bulma": "^0.9.4",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^13.0.1",
+    "next": "^13.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.57.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
-    "gray-matter": "^4.0.3",
-    "markdown-it": "^12.3.2",
-    "next": "^12.3.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.0",
-    "autoprefixer": "^10.4.2",
-    "eslint": "8.7.0",
-    "eslint-config-next": "12.0.8",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.15"
-  },
-  "browser": {
-    "fs": false,
-    "os": false,
-    "path": false
-  }
+  "name": "personal-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/victorialslocum/personal-blog.git",
+  "author": "Victoria Slocum <victorialslocum@gmail.com>",
+  "license": "MIT"
 }

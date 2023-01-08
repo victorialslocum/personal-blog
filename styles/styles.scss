@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:400,700");
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,600");
+@import url("https://fonts.googleapis.com/css?family=Ledger:300,600");
+
+// Set your brand colors
+$color1: #648844;
+$color2: #ffac33;
+$color3: #f69079;
+$color4: #420c14;
+
+// Update Bulma's global variables
+$family-sans-serif: "Comfortaa", serif;
+$grey-dark: #000;
+$primary: $color1;
+$link: $color2;
+$linkhover: $color4;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+$success: $color3;
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/_all.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
+
+p {
+  font-family: Nunito;
+}
+
+::selection {
+  background-color: $color2;
+}
+
+a::selection {
+  background-color: $color2;
+  color: #fff;
+}
+
+.is-underlined {
+  text-decoration: underline !important;
+  text-decoration-color: $color2 !important;
+}
+
+.is-underlined::selection {
+  text-decoration-color: #fff;
+}
+
+.media-content {
+    overflow-x: unset;
+}
+
+h1 {
+  font-size: 2rem;
+  text-decoration: underline !important;
+  padding-bottom: 1em;
+}
