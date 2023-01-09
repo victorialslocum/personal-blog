@@ -34,13 +34,13 @@ export default function Home({ posts }) {
     <div>
       <div className="container mx-auto px-40 mb-10">
       
-        <div className="flex items-center p-10 shadow-lg rounded-lg">
+        <div className="flex items-center p-10">
           <div className="flex-none w-250 h-350">
           <h1 className="text-7xl font-bold">🌻</h1>
           </div>
 
           <div className="text-left flex-1 pl-10">
-            <h1 className="text-4xl pb-3 font-bold underline decoration-main">Hello! I'm Victoria</h1>
+            <h1 className="text-4xl pb-3 font-bold">Hello! I'm Victoria</h1>
             
             <p className="text-md">
               I'm currently helping to expand and educate the community
@@ -54,6 +54,7 @@ export default function Home({ posts }) {
           </div>
           
         </div>
+        <hr></hr>
         {/* <div className="text-center pt-10 pb-5">
         <h2 className="text-xl font-bold">Welcome to my blog!</h2>
         <h2 className="text-lg">Some recent posts 🔽</h2>
@@ -86,7 +87,7 @@ export default function Home({ posts }) {
                   <p className="text-lg">{frontmatter.summary}</p>
                   <div className="flex pt-5">
                     {frontmatter.tags.map((tag) => (
-                      <div className="flex-none px-2 mr-2 bg-main-light font-bold rounded-md">
+                      <div className="flex-none px-2 mr-2 bg-main-light rounded-md">
                         {tag}
                       </div>
                     ))}
@@ -98,7 +99,8 @@ export default function Home({ posts }) {
         </div>
       ))}
       <Link href={'/blog'}><div className="text-center pt-10 pb-5">
-        <h2 className="text-xl font-bold underline decoration-main">Read more posts</h2>
+        <h2 className="text-lg font-bold">Read more posts</h2>
+        <h2 className="text-xl">🔽</h2>
         </div></Link>
     </div>
   );

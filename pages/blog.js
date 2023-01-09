@@ -53,7 +53,7 @@ export default function Home({ posts }) {
               <div className='text-xl ml-6 mt-0.5 px-3 bg-gray-200 rounded-md'>{frontmatter.date}</div></div>
               
               <p className='text-lg'>{frontmatter.summary}</p>
-              <div className='flex pt-5'>{frontmatter.tags.map((tag)=>(<div className='flex-none px-2 mr-2 bg-main-light font-bold rounded-md'>{tag}</div>))}</div>
+              <div className='flex pt-5'>{frontmatter.tags.map((tag)=>(<div className='flex-none px-2 mr-2 bg-main-light rounded-md'>{tag}</div>))}</div>
               </div>
               
             
