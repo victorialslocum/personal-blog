@@ -1,6 +1,6 @@
 ---
 title: 'How I got my job'
-socialImage: images/random.png
+socialImage: images/how-i-got-my-job.png
 date: '2021-10-11'
 tags:
   - growth

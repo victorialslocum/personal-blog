@@ -32,7 +32,6 @@ export default function Home({ posts }) {
   }
   return (
     <div className=''>
-      <div className=''>HEADER</div>
       {blog_posts.map(({ slug, frontmatter }) => (
         <div
           key={slug}
