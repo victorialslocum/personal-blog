@@ -1,7 +1,7 @@
 ---
 title: 'How I got my job'
 socialImage: images/how-i-got-my-job.png
-date: '2021-10-11'
+date: '2022-10-11'
 tags:
   - growth
 summary: "In the span of less than a year, I went from knowing almost nothing about natural language processing and machine learning to having a job at one of the coolest ML/NLP companies out there. I’m going to take a bit of time in this blog post to reflect on some of the things I did and mindsets I had that I think led me to where I am today. "
