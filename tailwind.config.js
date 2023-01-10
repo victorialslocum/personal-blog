@@ -11,7 +11,7 @@ module.exports = {
     extend: {colors: {
       'main': '#68A13F',
       'main-light': '#aadb85',
-      'accent': '#ff49db',
+      'accent': '#FFD400',
     },},
   },
   plugins: [require('@tailwindcss/typography')],

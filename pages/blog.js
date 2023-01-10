@@ -1,14 +1,14 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import Image from 'next/image';
-import Link from 'next/link';
+import fs from "fs";
+import matter from "gray-matter";
+import Image from "next/image";
+import Link from "next/link";
 
 export async function getStaticProps() {
-  const files = fs.readdirSync('posts');
+  const files = fs.readdirSync("posts");
 
   const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8');
+    const slug = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
     const { data: frontmatter } = matter(readFile);
     return {
       slug,
@@ -24,31 +24,32 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  let blog_posts = []
+  let blog_posts = [];
   for (let i = 0; i < posts.length; i++) {
-    if (posts[i].frontmatter.tags.includes('TIL') == false) {
-      blog_posts.push(posts[i])
+    if (posts[i].frontmatter.tags.includes("TIL") == false) {
+      blog_posts.push(posts[i]);
     }
   }
   return (
-    <div className=''>
-      {blog_posts.slice(0, 5).map(({ slug, frontmatter }) => (
+    <div className="">
+      {blog_posts.map(({ slug, frontmatter }) => (
         <div key={slug} className="overflow-hidden flex flex-col pb-10">
-          <Link href={`/post/${slug}`}>
-            <a>
-              <div className="md:flex">
-                <div className="md:pt-7 flex-none items-center justify-center">
-                  <div className="justify-center w-350 h-200">
+          <div className="md:flex">
+            <Link href={`/post/${slug}`}>
+              <a className="md:pt-7 flex-none items-center justify-center">
+                <div className="justify-center w-350 h-200">
                   <Image
                     width={350}
                     height={200}
                     alt={frontmatter.title}
                     src={`/${frontmatter.socialImage}`}
                   />
-                  </div>
                 </div>
-
-                <div className="text-left flex-auto p-2 pl-9">
+              </a>
+            </Link>
+            <div className="text-left flex-auto p-2 pl-9">
+              <Link href={`/post/${slug}`}>
+                <a>
                   <div className="flex py-4">
                     <h1 className="text-2xl font-bold underline decoration-main">
                       {frontmatter.title}
@@ -57,19 +58,18 @@ export default function Home({ posts }) {
                       {frontmatter.date}
                     </div>
                   </div>
-
-                  <p className="text-lg pr-5">{frontmatter.summary}</p>
-                  <div className="flex pt-5">
-                    {frontmatter.tags.map((tag) => (
-                      <div className="flex-none px-2 mr-2 bg-main-light rounded-md">
-                        {tag}
-                      </div>
-                    ))}
+                </a>
+              </Link>
+              <p className="text-lg pr-5">{frontmatter.summary}</p>
+              <div className="flex pt-5">
+                {frontmatter.tags.map((tag) => (
+                  <div className="flex-none px-2 mr-2 bg-main-light rounded-md">
+                    {tag}
                   </div>
-                </div>
+                ))}
               </div>
-            </a>
-          </Link>
+            </div>
+          </div>
         </div>
       ))}
     </div>
