@@ -1,13 +1,13 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import Link from 'next/link';
+import fs from "fs";
+import matter from "gray-matter";
+import Link from "next/link";
 
 export async function getStaticProps() {
-  const files = fs.readdirSync('posts');
+  const files = fs.readdirSync("posts");
 
   const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8');
+    const slug = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
     const { data: frontmatter } = matter(readFile);
     return {
       slug,
@@ -23,19 +23,26 @@ export async function getStaticProps() {
 }
 
 export default function TIL({ posts }) {
-  let til_posts = []
+  let til_posts = [];
   for (let i = 0; i < posts.length; i++) {
-    if (posts[i].frontmatter.tags.includes('TIL')) {
-      til_posts.push(posts[i])
+    if (posts[i].frontmatter.tags.includes("TIL")) {
+      til_posts.push(posts[i]);
     }
   }
+
+  til_posts.sort(function (a, b) {
+    var c = new Date(a.frontmatter.date);
+    var d = new Date(b.frontmatter.date);
+    return d - c;
+  });
+
   return (
-    <div className=''>
-      {til_posts.slice(0, 5).map(({ slug, frontmatter }) => (
+    <div className="">
+      {til_posts.map(({ slug, frontmatter }) => (
         <div key={slug} className="overflow-hidden flex flex-col pb-10">
           <Link href={`/post/${slug}`}>
             <a>
-<div className='container mx-auto lg:px-60'>
+              <div className="container mx-auto lg:px-60">
                 <div className="text-left flex-auto p-2 pl-9">
                   <div className="flex py-4">
                     <h1 className="text-2xl font-bold underline decoration-main">
@@ -55,7 +62,7 @@ export default function TIL({ posts }) {
                     ))}
                   </div>
                 </div>
-                </div>
+              </div>
             </a>
           </Link>
         </div>

@@ -30,6 +30,11 @@ export default function Home({ posts }) {
       blog_posts.push(posts[i]);
     }
   }
+  blog_posts.sort(function (a, b) {
+    var c = new Date(a.frontmatter.date);
+    var d = new Date(b.frontmatter.date);
+    return d - c;
+  });
   return (
     <div>
       <div className="container mx-auto md:px-20 lg:px-40 mb-10 items-center">
