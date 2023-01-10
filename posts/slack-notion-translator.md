@@ -20,7 +20,7 @@ So far, the code only translates Slack to Notion, but hopefully sometime soon it
 
 For testing, we're going to be using this example message from Slack. There is various text formatting in the item, like line breaks, [links](http://endless.horse/), tagged users, emojis 🐿️, `code`, **bold,** *italic,* and bullet points. The only thing Notion does inherently is the bullet points and numbered lists. 
 
-![Untitled](images/slack-notion-translator-1.png)
+![slack-notion-translator-1](/images/slack-notion-translator-1.png)
 
 ```jsx
 // example message from Slack
@@ -33,7 +33,7 @@ const slackExample =
 
 Notion items work in blocks, so here's that same message in Notion with the json object. The main blocks are split by line breaks and within that the arrays are based on the text type. 
 
-![Untitled](images/slack-notion-translator-2.png)
+![slack-notion-translator-2](/images/slack-notion-translator-2.png)
 
 ```jsx
 [ { type: 'text', text: { content: 'Hi this is a message with:' } } ]
