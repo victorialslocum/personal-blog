@@ -3,16 +3,14 @@ title: 'Slack to Notion translator'
 socialImage: images/slack-notion-translator.png
 date: '2021-09-10'
 tags:
-  - javascript
   - project
+  - javascript
 summary: "Notion has a very interesting way of setting up their pages, formatting their text, and creating items, and that happens to be very different than Slack's approach. By taking examples of text from both APIs, I was able to set up a translator between Slack and Notion. This blog post walks you through how I did it!"
 ---
 
 ### TLDR:
 
 Notion has a very interesting way of setting up their pages, formatting their text, and creating items, and that happens to be very different than Slack's approach. By taking examples of text from both APIs, I was able to set up a translator between Slack and Notion. This blog post walks you through how I did it, but you can also just check out the project on [GitHub](https://github.com/victoriaslocum752/slack-notion-translation). 
-
-(Note: this post doesn't walk you through how the APIs work, but you can find out how I did that in this project)
 
 ---
 
