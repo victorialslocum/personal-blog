@@ -48,9 +48,9 @@ export default function TIL({ posts }) {
                     <h1 className="text-2xl font-bold underline decoration-main">
                       {frontmatter.title}
                     </h1>
-                    {/* <div className="flex-none text-xl ml-6 mt-0.5 px-3 bg-gray-200 rounded-md">/post/TIL-2023-01-01
+                    <div className="flex-none text-xl ml-6 mt-0.5 px-3 bg-gray-200 rounded-md">
                       {frontmatter.date}
-                    </div> */}
+                    </div>
                   </div>
 
                   <p className="text-lg pr-5">{frontmatter.summary}</p>
