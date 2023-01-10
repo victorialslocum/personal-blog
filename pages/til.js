@@ -31,27 +31,32 @@ export default function TIL({ posts }) {
   }
   return (
     <div className=''>
-      {til_posts.map(({ slug, frontmatter }) => (
-        <div
-          key={slug}
-          className='overflow-hidden flex flex-col'
-        >
+      {til_posts.slice(0, 5).map(({ slug, frontmatter }) => (
+        <div key={slug} className="overflow-hidden flex flex-col pb-10">
           <Link href={`/post/${slug}`}>
-          <a>
-            <div className='container mx-auto px-60'>
-            
-              
-              
-              <div className='text-left p-2 pl-9'>
-              <h1 className='text-2xl font-bold pb-3 pt-3'>{frontmatter.title}</h1>
-              <p className='text-lg'>{frontmatter.summary}</p>
-              <div className='flex pt-5'>{frontmatter.tags.map((tag)=>(<div className='flex-none px-2 mr-2 bg-main-light rounded-md'>{tag}</div>))}</div>
-              </div>
-              
-            
-              </div>
+            <a>
+<div className='container mx-auto lg:px-60'>
+                <div className="text-left flex-auto p-2 pl-9">
+                  <div className="flex py-4">
+                    <h1 className="text-2xl font-bold underline decoration-main">
+                      {frontmatter.title}
+                    </h1>
+                    {/* <div className="flex-none text-xl ml-6 mt-0.5 px-3 bg-gray-200 rounded-md">/post/TIL-2023-01-01
+                      {frontmatter.date}
+                    </div> */}
+                  </div>
+
+                  <p className="text-lg pr-5">{frontmatter.summary}</p>
+                  <div className="flex pt-5">
+                    {frontmatter.tags.map((tag) => (
+                      <div className="flex-none px-2 mr-2 bg-main-light rounded-md">
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                </div>
             </a>
-            
           </Link>
         </div>
       ))}
