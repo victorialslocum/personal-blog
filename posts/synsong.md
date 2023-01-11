@@ -10,7 +10,7 @@ summary: "I just somewhat finished the beta of a project (synsong) to practice N
 
 ### TLDR:
 
-I just somewhat finished the beta of a project (synsong) to practice NLP, Python, and API skills. Right now, you can input genre, popularity, and a natural language prompt (such as a sentence, quote, or paragraph), and it will create a playlist based on matches with the lyrics, song title, and artist name with the prompt. Eventual goals are to practice model training to auto-detect genres, do some topic modeling with larger prompts, and maybe even have an option for mood. 
+I just somewhat finished the beta of a project ([synsong](https://synsong.app)) to practice NLP, Python, and API skills. Right now, you can input genre, popularity, and a natural language prompt (such as a sentence, quote, or paragraph), and it will create a playlist based on matches with the lyrics, song title, and artist name with the prompt. Eventual goals are to practice model training to auto-detect genres, do some topic modeling with larger prompts, and maybe even have an option for mood. 
 
 ---
 

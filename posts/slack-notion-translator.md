@@ -642,7 +642,7 @@ This project was a bit of a whirlwind, but overall very helpful to me.
 - different block types, like code blocks or quote blocks, won't work (Notion doesn't support yet)
 - tagging @channel or @here won't work with this because Slack has different formatting, but that can be fixed by adding replacement values. The formatting for those is <!channel> or <!here>.
 
-As always, had so much fun learning with this project. This was part of a larger project, which you can find on [GitHub](https://github.com/victoriaslocum752/standup-integration) and the blog. 
+As always, had so much fun learning with this project. This was part of a larger project, which you can find on [GitHub](https://github.com/victoriaslocum752/standup-integration). 
 
 The GitHub for this project is [here](https://github.com/victoriaslocum752/slack-notion-translation). 
 
