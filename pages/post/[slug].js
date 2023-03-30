@@ -1,7 +1,24 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import md from 'markdown-it';
 import Image from "next/image";
+
+var hljs = require('highlight.js'); // https://highlightjs.org
+
+// Actual default values
+var md = require('markdown-it')({
+  html: true,
+  linkify: true,
+  typographer: true,
+  highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(str, { language: lang }).value;
+      } catch (__) {}
+    }
+
+    return ''; // use external default escaping
+  }
+});
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('posts');
@@ -41,7 +58,7 @@ export default function PostPage({ frontmatter, content }) {
                   ))}
                 </div></div>
       
-      <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+      <div dangerouslySetInnerHTML={{ __html: md.render(content) }} />
     </div>
   );
 }

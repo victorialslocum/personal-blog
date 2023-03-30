@@ -61,7 +61,7 @@ export default function Home({ posts }) {
         <h2 className="text-lg">Some recent posts 🔽</h2>
         </div> */}
       </div>
-      {blog_posts.slice(0, 5).map(({ slug, frontmatter }) => (
+      {blog_posts.slice(0, 3).map(({ slug, frontmatter }) => (
         <div key={slug} className="overflow-hidden flex flex-col pb-10">
           
             <div className="md:flex">
