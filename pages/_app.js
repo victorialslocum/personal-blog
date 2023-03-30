@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <Head>
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <title>Victoria's Blog</title>
       </Head>
       <Component {...pageProps} />
       <Analytics />
