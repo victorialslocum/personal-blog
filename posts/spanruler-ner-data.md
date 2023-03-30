@@ -1,7 +1,7 @@
 ---
 title: "Rulers, NER, and data iteration"
 socialImage: images/spanruler-ner-data_header.png
-date: '2023-03-28'
+date: '2023-03-30'
 tags:
   - project
   - spaCy
@@ -170,6 +170,7 @@ This process is not 100% ideal. In order to use this method, I would have to adj
 To fix some of the annotations, I used the [Prodigy `review` recipe](https://prodi.gy/docs/recipes#review) to compare the model's output with the original annotations. The `review` recipe is able to display inputs from multiple "annotators", in this case, the NER model and our original annotations. Then, the annotator can correct the annotations as needed, and it's saved into a new dataset.
 
 ![](/images/spanruler-ner-data_5.png)
+<figcaption>An example entry from the review recipe in Prodigy. Both the original annotations and NER model predictions are shown, and the annotator can correct annotations as needed.</figcaption>
 
 You can find the [full script in the project's GitHub](https://github.com/explosion/projects/blob/v3/tutorials/spanruler_restaurant_reviews/scripts/preprocess_prodigy.py) to convert the original data into JSONL formatting with different annotators, but I'll quickly go through some important parts here.
 
@@ -223,7 +224,10 @@ Before looking at the data, we had tried to write rules to pick up `Rating` enti
 ```
 
 ![](/images/spanruler-ner-data_9.png)
+<figcaption>The rule would help this situation because it would correct the model predictions to be the same as the original annotations.</figcaption>
+
 ![](/images/spanruler-ner-data_10.png)
+<figcaption>The rule would decrease performance scores in this situation because it would correct the annotations to "at least 3 stars", which would be different from the original annotations.</figcaption>
 
 The new model with the revised data was able to consistently annotate these examples! This happened for many of the patterns and meant that we didn't even need most of the old rules anymore.
 
