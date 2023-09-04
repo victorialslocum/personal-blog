@@ -47,10 +47,11 @@ export default function Home({ posts }) {
             <h1 className="text-4xl pb-3 font-bold">Hello! I'm Victoria</h1>
 
             <p className="text-md">
-              I'm currently helping to expand and educate the community
-              around spaCy and other developer tools with Explosion. I'm kind of
-              obsessed with natural language processing and working on
-              cool projects that challenge my understanding of the world.
+              I'm currently working as a Machine Learning Engineer at{" "}
+              <Link href={"https://weaviate.io"}>Weaviate</Link>. I'm kind of
+              obsessed with the challenges and evolutions within the expanding
+              world of AI, creating cool projects that build my knowledge and
+              skills, and learning and sharing within the developer community.
               Welcome to my learnings and doings!
             </p>
           </div>
@@ -63,25 +64,22 @@ export default function Home({ posts }) {
       </div>
       {blog_posts.slice(0, 3).map(({ slug, frontmatter }) => (
         <div key={slug} className="overflow-hidden flex flex-col pb-10">
-          
-            <div className="md:flex">
-              <Link href={`/post/${slug}`}>
+          <div className="md:flex">
+            <Link href={`/post/${slug}`}>
               <a className="md:pt-7 flex-none items-center justify-center">
-                
-                  <div className="justify-center w-350 h-200">
-                    <Image
-                      width={350}
-                      height={200}
-                      alt={frontmatter.title}
-                      src={`/${frontmatter.socialImage}`}
-                    />
-                  </div>
-                
-                </a>
-              </Link>
-              <div className="text-left flex-auto p-2 pl-9">
-                <Link href={`/post/${slug}`}>
-                  <a>
+                <div className="justify-center w-350 h-200">
+                  <Image
+                    width={350}
+                    height={200}
+                    alt={frontmatter.title}
+                    src={`/${frontmatter.socialImage}`}
+                  />
+                </div>
+              </a>
+            </Link>
+            <div className="text-left flex-auto p-2 pl-9">
+              <Link href={`/post/${slug}`}>
+                <a>
                   <div className="flex py-4">
                     <h1 className="text-2xl font-bold underline decoration-main">
                       {frontmatter.title}
@@ -90,19 +88,18 @@ export default function Home({ posts }) {
                       {frontmatter.date}
                     </div>
                   </div>
-                  </a>
-                </Link>
-                <p className="text-lg pr-5">{frontmatter.summary}</p>
-                <div className="flex pt-5">
-                  {frontmatter.tags.map((tag) => (
-                    <div className="flex-none px-2 mr-2 bg-main-light rounded-md">
-                      {tag}
-                    </div>
-                  ))}
-                </div>
+                </a>
+              </Link>
+              <p className="text-lg pr-5">{frontmatter.summary}</p>
+              <div className="flex pt-5">
+                {frontmatter.tags.map((tag) => (
+                  <div className="flex-none px-2 mr-2 bg-main-light rounded-md">
+                    {tag}
+                  </div>
+                ))}
               </div>
             </div>
-        
+          </div>
         </div>
       ))}
       <Link href={"/blog"}>
